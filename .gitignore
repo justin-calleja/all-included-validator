@@ -1,5 +1,7 @@
+/tmp
+
 # generated documentation
-doc/gen
+doc/tutorials
 
 # Logs
 logs

@@ -1,18 +1,20 @@
 {
   "name": "@justinc/all-included-validator",
-  "version": "0.0.0-development",
-  "description": "Checks for duplicates given an Iterable",
+  "version": "0.0.1",
+  "description": "Checks that all elements in the given 2nd iterable are members of the given 1st iterable",
   "main": "lib/index.js",
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
     "precommit": "npm t",
+    "postcommit": "npm run readme",
     "prepush": "npm t",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
-    "copy:curry": "cp node_modules/@justinc/jsdocs/tutorials/curry.md doc/tutorials",
-    "prereadme": "rimraf README.md && npm run copy:curry",
-    "readme": "jsdoc2md --template readmeTpl.hbs -c doc/conf.json >> README.md",
+    "copy:tutorials": "cp node_modules/@justinc/jsdocs/tutorials/curry.md doc/tutorials",
+    "clean:readme": "rimraf README.md && rimraf doc/tutorials && mkdirp doc/tutorials",
+    "prereadme": "npm run clean:readme && npm run copy:tutorials",
+    "readme": "jsdoc2md --no-cache --template readmeTpl.hbs -c doc/conf.json --files lib/* >> README.md",
     "test": "ava",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -35,14 +37,15 @@
     "cz-conventional-changelog": "2.0.0",
     "husky": "0.13.1",
     "jsdoc-to-markdown": "3.0.0",
+    "mkdirp": "0.5.1",
     "rimraf": "2.6.0",
-    "semantic-release": "6.3.2",
+    "semantic-release": "^6.3.2",
     "standard": "8.6.0",
     "validate-commit-msg": "2.11.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justin-calleja/no-dups-validator.git"
+    "url": "https://github.com/justin-calleja/all-included-validator.git"
   },
   "config": {
     "commitizen": {

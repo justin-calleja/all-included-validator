@@ -4,7 +4,6 @@
   },
   "source": {
     "include": [
-      "lib/index.js",
       "node_modules/@justinc/jsdocs/typedefs/index.jsdoc",
       "node_modules/@justinc/jsdocs/typedefs/Tuple.jsdoc"
     ]

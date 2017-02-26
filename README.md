@@ -66,7 +66,61 @@ TODO: A JSDoc 3 tutorial (re currying) needs to be injected in this README.md. F
 * tutorial: [curry.md](https://github.com/justin-calleja/jsdocs/blob/master/tutorials/curry.md)
 * issue: [jsdoc2md/jsdoc-to-markdown#115](https://github.com/jsdoc2md/jsdoc-to-markdown/issues/115)
 
-{{>main}}
+## Modules
+
+<dl>
+<dt><a href="#module_@justinc/all-included-validator">@justinc/all-included-validator</a></dt>
+<dd></dd>
+<dt><a href="#module_@justinc/jsdocs">@justinc/jsdocs</a></dt>
+<dd><p>This module houses JSDoc 3 type definitions which can be re-used in different packages.</p>
+</dd>
+</dl>
+
+<a name="module_@justinc/all-included-validator"></a>
+
+## @justinc/all-included-validator
+<a name="module_@justinc/all-included-validator..allIncluded"></a>
+
+### @justinc/all-included-validator~allIncluded([iterableA], [iterableB], [errMsgPrefix]) ⇒ <code>Tuple.&lt;Boolean, Array.&lt;Error&gt;&gt;</code>
+This function is curried. Checks that all elements in the given 2nd iterable are
+members of the given 1st iterable.
+
+**Kind**: inner method of <code>[@justinc/all-included-validator](#module_@justinc/all-included-validator)</code>  
+**See**: [Tuple](#module_@justinc/jsdocs.Tuple)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [iterableA] | <code>Iterable</code> | <code>[]</code> | The 1st iterable |
+| [iterableB] | <code>Iterable</code> | <code>[]</code> | The 2nd iterable, whose elements should all be in the 1st iterable |
+| [errMsgPrefix] | <code>String</code> | <code>&#x27;&#x27;</code> | A string to prefix the error message (the err msg is any found 2nd iterable elems which are not in the 1st iterable) |
+
+<a name="module_@justinc/jsdocs"></a>
+
+## @justinc/jsdocs
+This module houses JSDoc 3 type definitions which can be re-used in different packages.
+
+<a name="module_@justinc/jsdocs.Tuple"></a>
+
+### @justinc/jsdocs.Tuple : <code>Array</code>
+The type `Tuple` is an `Array` of fixed length whose elements at specific
+indices are of the specified types.
+
+**Kind**: static typedef of <code>[@justinc/jsdocs](#module_@justinc/jsdocs)</code>  
+**Example**  
+```js
+// A Tuple of arity (length) 2, whose first el is a Boolean and second el is
+// an Array of Error:
+Tuple<Boolean, Array<Error>>
+// e.g. [ true, [] ]
+// e.g. [ false, [ new Error('computer says no') ] ]
+```
+**Example**  
+```js
+// A Tuple of arity (length) 3, whose first el is a String, and both the
+// second and third els are an Array of String:
+Tuple<String, Array<String>, Array<String>>
+// e.g. [ 'hello', [ 'world' ], [ 'goodbye', 'world' ] ]
+```
 
 [travis-image]: https://img.shields.io/travis/justin-calleja/all-included-validator.svg?style=flat-square
 [travis-url]: https://travis-ci.org/justin-calleja/all-included-validator
