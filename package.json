@@ -1,6 +1,6 @@
 {
   "name": "@justinc/all-included-validator",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Checks that all elements in the given 2nd iterable are members of the given 1st iterable",
   "main": "lib/index.js",
   "scripts": {
